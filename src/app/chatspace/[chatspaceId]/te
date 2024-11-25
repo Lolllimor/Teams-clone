@@ -1,0 +1,85 @@
+'use client';
+import {
+  IPopoverContext,
+  PopoverContext,
+} from '@/components/providers/sidebarContext';
+import { Button } from '@/components/ui/button';
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from '@/components/ui/popover';
+import { cn } from '@/lib/utils';
+import { LucideIcon } from 'lucide-react';
+import { useContext, useState } from 'react';
+import { IconType } from 'react-icons/lib';
+import useWindowSize from '../../../../hooks/useWindowSize';
+import { ChatList } from '@/components/chat/chat-list';
+
+interface SidebarButtonProps {
+  icon: LucideIcon | IconType;
+  label?: string;
+}
+export const SidebarButton = ({ icon: Icon, label }: SidebarButtonProps) => {
+  const { popoverState, setPopoverState } = useContext(
+    PopoverContext
+  ) as IPopoverContext;
+
+  const windowSize = useWindowSize();
+  const [hovered, setHovered] = useState(false);
+
+  const isSmallScreen = windowSize.width < 946;
+  const isActiveLabel = popoverState.name === label;
+
+  const baseButtonClasses =
+    'p-2 flex flex-col h-[56px] w-full rounded-none group bg-transparent gap-0 group-hover:bg-[#1a1a1a] transition-all';
+  const activeClasses = 'border-l-2 border-l-purple-teams';
+  const iconColorClass = isActiveLabel ? 'text-purple-teams' : 'text-[#adadad]';
+
+  const handleHover = (state: boolean) => isSmallScreen && setHovered(state);
+
+  const renderButton = () => (
+    <Button
+      onMouseEnter={() => handleHover(true)}
+      onMouseLeave={() => handleHover(false)}
+      onClick={() => setPopoverState((prev) => ({ ...prev, name: label }))}
+      className={cn(baseButtonClasses, isActiveLabel && activeClasses)}
+    >
+      <Icon
+        className={cn(
+          iconColorClass,
+          '!size-[20px] group-hover:text-purple-teams'
+        )}
+      />
+      <span
+        className={cn(
+          iconColorClass,
+          'w-full text-[11px] truncate group-hover:text-purple-teams '
+        )}
+      >
+        {label}
+      </span>
+    </Button>
+  );
+
+  return (
+    <div
+      onMouseEnter={() => handleHover(true)}
+      onMouseLeave={() => handleHover(false)}
+      className="flex flex-col items-center justify-center gap-y-0.5 cursor-pointer group w-full"
+    >
+      {isActiveLabel ? (
+        <Popover open={!isSmallScreen || hovered}>
+          <PopoverTrigger className="w-full" asChild>
+            {renderButton()}
+          </PopoverTrigger>
+          <PopoverContent  side="right" className="bg-[#1a1a1a] border-0 text-[#adadad]">
+            <ChatList />
+          </PopoverContent>
+        </Popover>
+      ) : (
+        renderButton()
+      )}
+    </div>
+  );
+};
