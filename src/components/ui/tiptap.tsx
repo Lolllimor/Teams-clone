@@ -56,7 +56,7 @@ const Tiptap = ({content,setContent}:{content:any, setContent: any}) => {
     });
 
   return (
-    <div className=" text-white h-fit text-wrap">
+    <div className=" text-white h-fit text-wrap w-full">
       <EditorContent editor={editor} className=" w-full" />
     </div>
   );
