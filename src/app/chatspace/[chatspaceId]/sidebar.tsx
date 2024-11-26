@@ -29,7 +29,7 @@ const Sidebar = () => {
   const isSmallScreen = windowSize.width < 946;
 
   return (
-    <aside className=" h-full flex">
+    <aside className=" h-full flex ">
       <div
         className="w-[4.3rem]  bg-black-charcoal flex flex-col h-full items-center  gap-y-1 "
         onMouseEnter={() => handleHover(true)}

@@ -1,4 +1,3 @@
-
 import Sidebar from './sidebar';
 import { Toolbar } from './toolbar';
 import PopoverProvider from '@/components/providers/sidebarContext';
