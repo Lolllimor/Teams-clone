@@ -34,8 +34,6 @@ import { LuSendHorizonal, LuHighlighter } from 'react-icons/lu';
 import { GoSmiley, GoItalic, GoCodeSquare } from 'react-icons/go';
 import { Button } from './button';
 
-// focus:border-b-purple-teams focus:border-b-2 py-2.5 px-3  border-black-grayish bg-black-charleston rounded-md
-
 const Tiptap = ({ content, setContent }: { content: any; setContent: any }) => {
   const editor = useEditor({
     editorProps: {
