@@ -19,7 +19,7 @@ const Chatspace = () => {
     { name: 'Chat', value: 'chat' },
     { name: 'Shared', value: 'shared' },
   ];
-  const [editorContent, setEditorContent] = useState('<p>Hi</p>');
+  const [editorContent, setEditorContent] = useState('');
 
   const [currentTab, setCurrentTab] = useState('chat');
   return (
@@ -267,7 +267,7 @@ const Chatspace = () => {
                 </div>
               </div>
             </div>
-            <div className="flex sticky bottom-0  mb-5  h-fit mx-8 pt-[2.5rem]">
+            <div className="flex sticky bottom-0  mb-5  h-fit mx-16 pt-[2rem]">
               <Tiptap content={editorContent} setContent={setEditorContent} />
             </div>
           </div>
