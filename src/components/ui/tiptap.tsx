@@ -59,7 +59,6 @@ const Tiptap = ({ content, setContent }: { content: any; setContent: any }) => {
       Highlight,
       Underline,
       Document,
-      Paragraph,
 
       Link.configure({
         openOnClick: true,
@@ -73,6 +72,7 @@ const Tiptap = ({ content, setContent }: { content: any; setContent: any }) => {
     onUpdate({ editor }) {
       setContent(editor.getHTML());
     },
+    immediatelyRender: false,
   });
 
   const menuData = [

@@ -37,6 +37,7 @@ import {
   DropdownEllipsis2,
   ToolbarStatus,
 } from '@/components/data';
+import { useAuthActions } from '@convex-dev/auth/react';
 
 const Status = () => (
   <DropdownMenu>
@@ -105,6 +106,7 @@ const Location = () => (
 );
 
 export const Toolbar = () => {
+  const { signOut } = useAuthActions();
   return (
     <nav className="bg-black-charcoal flex items-center justify-between h-12 px-5 py-3">
       <div className="flex-1 flex gap-5 text-black-grayish items-center">
@@ -212,7 +214,13 @@ export const Toolbar = () => {
                 <p className="truncate w-36 text-sm">
                   Afex Commodities exchange
                 </p>
-                <p className="font-normal text-[12px] hover:text-purple-teams cursor-pointer">
+                <p
+                  onClick={() => {
+                    console.log("first")
+                    signOut();
+                  }}
+                  className="font-normal text-[12px] hover:text-purple-teams cursor-pointer"
+                >
                   Sign out
                 </p>
               </DropdownMenuLabel>

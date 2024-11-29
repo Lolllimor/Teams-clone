@@ -43,7 +43,10 @@ export const SignInCard = ({ setState }: SignInCardProps) => {
   };
 
   const onProvider = () => {
-    signIn('google');
+     setPending(true);
+    signIn('google').finally(() => {
+      setPending(false);
+    });
   };
   return (
     <Card className="w-full h-full p-8">
@@ -95,10 +98,11 @@ export const SignInCard = ({ setState }: SignInCardProps) => {
         <Separator />
         <div className="flex flex-col gap-y-2.5">
           <Button
+            disabled={pending}
             variant="outline"
             onClick={() => onProvider()}
             size="lg"
-            className=" md:relative w-[250px] md:w-full items-center md:block justify-between flex"
+            className=" md:relative w-full md:w-full items-center md:block justify-between flex"
           >
             <FcGoogle className="size-5 md:absolute md:top-3 md:left-5" />
             <p className=" text-[#5b5fc7] font-semibold">
