@@ -1,4 +1,4 @@
-import React from 'react';
+
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -6,15 +6,16 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '../ui/dropdown-menu';
-import { MdMoreHoriz } from 'react-icons/md';
-import { GoSearch } from 'react-icons/go';
-import { VscNewFolder } from 'react-icons/vsc';
-import { BsPinAngleFill } from 'react-icons/bs';
-import { FaBellSlash } from 'react-icons/fa6';
-import { TbDeviceDesktopShare } from 'react-icons/tb';
-import { RiDeleteBinFill } from 'react-icons/ri';
 
-export const ChatHeaderMore = () => {
+import { MdModeEdit } from 'react-icons/md';
+import { BiSolidHide } from 'react-icons/bi';
+import { MdMoreHoriz } from 'react-icons/md';
+import { BsPinAngleFill } from 'react-icons/bs';
+import { IoLinkOutline } from 'react-icons/io5';
+import { FaBell, FaEnvelope } from 'react-icons/fa';
+import { GoSearch, GoWorkflow } from 'react-icons/go';
+
+export const TeamHeaderMore = () => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger className="px-2">
@@ -23,37 +24,33 @@ export const ChatHeaderMore = () => {
           className="hover:text-purple-teams cursor-pointer "
         />
       </DropdownMenuTrigger>
-      <DropdownMenuContent className=" bg-black-charleston w-fit  drop-shadow-2xl p-1 rounded-sm">
+      <DropdownMenuContent
+        align="end"
+        className=" bg-black-charleston w-fit  drop-shadow-2xl p-1 rounded-sm"
+      >
         <DropdownMenuItem>
           <div className="flex gap-2 items-center group w-full">
             <GoSearch className="group-hover:text-purple-teams text-black-grayish" />
             <p className="text-gray-light text-sm group-hover:text-white">
-              Find in chat
+              See new post at top
             </p>
           </div>
         </DropdownMenuItem>
-        <DropdownMenuItem>
-          <div className="flex gap-2 items-center group w-full">
-            <VscNewFolder className="group-hover:text-purple-teams text-black-grayish" />
-            <p className="text-gray-light text-sm group-hover:text-white">
-              Schedule meeting
-            </p>
-          </div>
-        </DropdownMenuItem>
-        <DropdownMenuItem>
-          <div className="flex gap-2 items-center group w-full">
-            <TbDeviceDesktopShare className="group-hover:text-purple-teams text-black-grayish" />
-            <p className="text-gray-light text-sm group-hover:text-white">
-              Screen sharing
-            </p>
-          </div>
-        </DropdownMenuItem>
+
         <DropdownMenuSeparator className="h-[0.2px] bg-black-grayish" />
         <DropdownMenuItem>
           <div className="flex gap-2 items-center group w-full">
             <GoSearch className="group-hover:text-purple-teams text-black-grayish" />
             <p className="text-gray-light text-sm group-hover:text-white">
-              Mark as unread
+              Find in channel
+            </p>
+          </div>
+        </DropdownMenuItem>
+        <DropdownMenuItem>
+          <div className="flex gap-2 items-center group w-full">
+            <FaBell className="group-hover:text-purple-teams text-black-grayish" />
+            <p className="text-gray-light text-sm group-hover:text-white">
+              Channel notifications
             </p>
           </div>
         </DropdownMenuItem>
@@ -67,18 +64,43 @@ export const ChatHeaderMore = () => {
         </DropdownMenuItem>
         <DropdownMenuItem>
           <div className="flex gap-2 items-center group w-full">
-            <FaBellSlash className="group-hover:text-purple-teams text-black-grayish" />
+            <BiSolidHide className="group-hover:text-purple-teams text-black-grayish" />
             <p className="text-gray-light text-sm group-hover:text-white">
-              Mute
+              Hide
             </p>
           </div>
         </DropdownMenuItem>
+
         <DropdownMenuSeparator className="h-[0.2px] bg-black-grayish" />
         <DropdownMenuItem>
           <div className="flex gap-2 items-center group w-full">
-            <RiDeleteBinFill className="group-hover:text-purple-teams text-black-grayish" />
+            <FaEnvelope className="group-hover:text-purple-teams text-black-grayish" />
             <p className="text-gray-light text-sm group-hover:text-white">
-              Delete
+              Get email address
+            </p>
+          </div>
+        </DropdownMenuItem>
+        <DropdownMenuItem>
+          <div className="flex gap-2 items-center group w-full">
+            <IoLinkOutline className="group-hover:text-purple-teams text-black-grayish" />
+            <p className="text-gray-light text-sm group-hover:text-white">
+              Get link to channel
+            </p>
+          </div>
+        </DropdownMenuItem>
+        <DropdownMenuItem>
+          <div className="flex gap-2 items-center group w-full">
+            <MdModeEdit className="group-hover:text-purple-teams text-black-grayish" />
+            <p className="text-gray-light text-sm group-hover:text-white">
+              Edit channel
+            </p>
+          </div>
+        </DropdownMenuItem>
+        <DropdownMenuItem>
+          <div className="flex gap-2 items-center group w-full">
+            <GoWorkflow className="group-hover:text-purple-teams text-black-grayish" />
+            <p className="text-gray-light text-sm group-hover:text-white">
+              Workflows
             </p>
           </div>
         </DropdownMenuItem>

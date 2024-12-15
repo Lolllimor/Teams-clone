@@ -1,4 +1,4 @@
-import type { Config } from "tailwindcss";
+import type { Config } from 'tailwindcss';
 
 const config: Config = {
   darkMode: ['class'],
@@ -10,17 +10,24 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      transitionDuration: {
+        '2000': '2000ms',
+        '5000': '5000ms',
+      },
       colors: {
+        silver: { sonic: '#757575' },
         purple: {
           teams: '#7f85f5',
           periwinkle: '#aab1fa',
           darkperiwinkle: '#3d3e78',
           slateBlue: '#7579eb',
-          gunMetal: '#2B2B40'
+          gunMetal: '#2B2B40',
         },
         gray: {
           light: '#D6D6D6',
           slate: '#2F2F4A',
+          granite: "#666666",
+          spanish:"#949494"
         },
         black: {
           charcoal: '#0a0a0a',
@@ -28,6 +35,9 @@ const config: Config = {
           grayish: '#adadad',
           onyx: '#383838',
           charleston: '#292929',
+          loading: '#1f1f1f',
+          olive: '#3c3d3e',
+          olive2: '#3d3d3d',
         },
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',

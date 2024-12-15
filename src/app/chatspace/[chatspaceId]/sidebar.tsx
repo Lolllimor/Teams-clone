@@ -31,7 +31,7 @@ const Sidebar = () => {
   return (
     <aside className=" h-full flex ">
       <div
-        className="w-[4.3rem]  bg-black-charcoal flex flex-col h-full items-center  gap-y-1 "
+        className="max-w-[4.3rem]  bg-black-charcoal flex flex-col h-full items-center  gap-y-1 "
         onMouseEnter={() => handleHover(true)}
         onMouseLeave={() => handleHover(false)}
       >
@@ -44,13 +44,22 @@ const Sidebar = () => {
           onMouseEnter={() => isSmallScreen && setHovered(true)}
           onMouseLeave={() => isSmallScreen && setHovered(false)}
           className={`bg-black-almost w-[280px] h-full 
-            ${hovered || !isSmallScreen ? 'flex ' : 'hidden'} ${hovered || (isSmallScreen && 'absolute z-30')}`}
+            ${hovered || !isSmallScreen ? 'flex ' : 'hidden'} ${hovered && (isSmallScreen && 'absolute z-30')}`}
         >
           {popoverState.name === 'Chat' ? (
             <ChatList
               pinnedchildren={<Chat />}
               recentChildren={
                 <>
+                  <Chat />
+                  <Chat />
+                  <Chat />
+                  <Chat />
+                  <Chat />
+                  <Chat />
+                  <Chat />
+                  <Chat />
+                  <Chat />
                   <Chat />
                   <Chat />
                   <Chat />

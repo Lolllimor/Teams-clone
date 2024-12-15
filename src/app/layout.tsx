@@ -1,9 +1,11 @@
 import type { Metadata } from 'next';
 
+import './globals.css';
+
 import { ConvexAuthNextjsServerProvider } from '@convex-dev/auth/nextjs/server';
 import { ConvexClientProvider } from '@/components/convex-client-provider';
 
-import './globals.css';
+import PopoverProvider from '@/components/providers/sidebarContext';
 import { JotaiProvider } from '@/components/jotai-provider';
 import { Toaster } from 'sonner';
 
@@ -19,15 +21,12 @@ export default function RootLayout({
 }>) {
   return (
     <ConvexAuthNextjsServerProvider>
-      {/* `suppressHydrationWarning` only affects the html tag,
-      and is needed by `ThemeProvider` which sets the theme
-      class attribute on it */}
       <html lang="en" suppressHydrationWarning>
         <body>
           <ConvexClientProvider>
             <JotaiProvider>
               <Toaster />
-              {children}
+              <PopoverProvider>{children}</PopoverProvider>
             </JotaiProvider>
           </ConvexClientProvider>
         </body>

@@ -1,0 +1,12 @@
+ <div className="group relative inline-flex h-[149px] w-[149px] items-center justify-center overflow-hidden rounded-md m-12 font-medium text-neutral-200 bg-[url('/teams.svg')] bg-no-repeat bg-[length:149px_149px] teams-bg">
+        <div
+          className={`absolute inset-0 flex h-full justify-center duration-5000`}
+          style={{
+            transform: `skew(-35deg) translateX(${transformState})`,
+          }}
+        >
+          <div
+            className={`${transformState === '-100%' ? 'bg-transparent' : 'bg-black-loading/5'} relative h-full w-8 `}
+          ></div>
+        </div>
+      </div>

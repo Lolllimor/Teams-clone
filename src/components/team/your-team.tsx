@@ -106,7 +106,7 @@ export const YourTeam = ({
                 />
               </div>
               <div className="flex gap-2.5 items-center w-full">
-                <div className=" rounded-sm h-7 w-7 flex justify-center items-center bg-[#949494] text-white">
+                <div className=" rounded-sm h-7 w-7 flex justify-center items-center bg-gray-spanish text-white">
                   <FaPeopleGroup />
                 </div>
 

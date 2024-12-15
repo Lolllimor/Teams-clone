@@ -157,14 +157,14 @@ const Tiptap = ({ content, setContent }: { content: any; setContent: any }) => {
           editor?.chain().focus().run();
         }
       }}
-      className={`${on && 'flex-col '} ${editor?.isFocused && 'border-b-purple-teams border-b-2'} flex gap-4 text-white h-fit text-wrap w-full py-2.5 px-3  border-black-grayish bg-black-charleston rounded-md items-end`}
+      className={`${on && 'flex-col '} ${editor?.isFocused && 'border-b-purple-teams border-b-2'} flex gap-4 text-white h-fit text-wrap w-full py-2.5 px-3  border-black-grayish bg-black-charleston rounded-md items-end justify-between`}
     >
       <div className={`${on ? 'w-full' : 'w-[73%]'} flex flex-col items-start`}>
         {on && <Menu />}
         <EditorContent editor={editor} className={` w-full flex  shrink`} />
       </div>
       <div
-        className={`${on ? 'w-full' : 'w-fit'} flex gap-3 items-center h-full shrink-0`}
+        className={`${on ? 'w-full' : 'w-fit'} flex gap-3 items-center h-full shrink-0 justify-end`}
       >
         <LiaEdit
           onClick={toggle}

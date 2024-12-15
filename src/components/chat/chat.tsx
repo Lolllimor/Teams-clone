@@ -8,7 +8,7 @@ import {
 } from '../ui/dropdown-menu';
 import { dropdownData } from '../data';
 import { RiDeleteBinFill } from 'react-icons/ri';
-import { FaRegUser } from 'react-icons/fa6';
+import { FaRegCircle, FaRegUser } from 'react-icons/fa6';
 
 export const Chat = () => {
   const chatWrapper =
@@ -17,7 +17,9 @@ export const Chat = () => {
     <div className={chatWrapper}>
       <div className="px-[8px] relative py-[8px] bg-accent/50 hover:bg-accent/50 h-fit w-fit rounded-full">
         <FaRegUser className="p-0 text-white  hover:text-white size-4" />
-        <div className=" flex h-[11px] w-[11px] border border-accent/50 rounded-full absolute bottom-[-3px] bg-[#3c3d3e] right-[2px]"></div>
+        <div className="w-[12px] h-[12px] rounded-full absolute bottom-0 right-0 bg-black-loading  flex justify-center items-center">
+          <FaRegCircle className="w-[11px] h-[11px] text-black-grayish" />
+        </div>
       </div>
       <div className="flex flex-col text-black-grayish  group-hover:text-white">
         <div className=" w-full  flex justify-between">

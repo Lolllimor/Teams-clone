@@ -35,34 +35,35 @@ export const SquareInfoHeader = () => {
           className=" bg-[#1f1f1f] w-[319px] rounded-sm p-0 hover:text-gray-light  text-gray-light drop-shadow-2xl  h-full"
         >
           <div className=" flex flex-col h-full">
-            <div className="flex items-center justify-between px-5 py-3.5 border-b border-b-black-charcoal">
+            <div className="flex items-center justify-between px-5 py-3.5 border-b  border-b-black-charcoal">
               <span className="text-white font-semibold text-sm">
                 In this chat
               </span>
-              <GoSearch />
+              <GoSearch className="hover:text-purple-slateBlue cursor-pointer" />
             </div>
             <Accordion
               type="single"
               collapsible
-              className="px-1.5 "
+              className="px-1.5 h-full flex-grow"
               defaultValue="Shared"
             >
               <AccordionItem value="Shared">
-                <AccordionTrigger className=" pb-0">
-                  <div className="flex gap-1 items-center group w-full">
+                <AccordionTrigger asChild className=" pb-0  w-fit">
+                  <div className="flex gap-[2px] cursor-pointer  group">
                     <FaCaretRight
                       size={12}
                       className={cn(
-                        ' text-[#1f1f1f] size-3 transition-transform group-hover:text-[#fff] '
-                        // on && 'rotate-90'
+                        ' text-[#1f1f1f] size-3 transition-transform group-hover:text-[#fff]'
                       )}
                     />
                     <span className="text-gray-light text-xs">Shared</span>
                   </div>
                 </AccordionTrigger>
-                <AccordionContent className=" flex flex-col gap-2 h-full">
-                  <Button className="flex gap-3 py-2 h-fit bg-transparent hover:bg-accent/10 my-1 px-2 group w-full">
-                    <div className="bg-red-600 w-8 h-8 shrink-0"></div>
+                <AccordionContent className=" flex flex-col gap-2 h-full px-1.5">
+                  <Button className="flex gap-3 py-2 h-fit bg-transparent hover:bg-accent/10 my-1 px-2 group w-[295px]">
+                    <div className=" w-8 h-8  shrink-0">
+                      <img src="/gallery.svg" />
+                    </div>
                     <div className="flex flex-col justify-between items-start min-w-0">
                       <p className="text-sm text-white truncate w-full">
                         Screenshot 2024-06-27 131008.png
@@ -76,8 +77,10 @@ export const SquareInfoHeader = () => {
                       className="hover:text-purple-teams group-hover:text-gray-light cursor-pointer text-[#1f1f1f]  "
                     />
                   </Button>
-                  <Button className="flex gap-3 py-2 h-fit bg-transparent hover:bg-accent/10 my-1 px-2 group w-full">
-                    <div className="bg-red-600 w-8 h-8 shrink-0"></div>
+                  <Button className="flex gap-3 py-2 h-fit bg-transparent hover:bg-accent/10 my-1 px-2 group w-[295px]">
+                    <div className="w-8 h-8 shrink-0">
+                      <img src="/gallery.svg" />
+                    </div>
                     <div className="flex flex-col justify-between items-start min-w-0">
                       <p className="text-sm text-white truncate w-full">
                         Screenshot 2024-06-27 131008.png

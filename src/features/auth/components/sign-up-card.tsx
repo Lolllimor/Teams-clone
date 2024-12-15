@@ -12,15 +12,17 @@ import {
 } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
-import { Separator } from '@/components/ui/separator';
 
 import { SignInFlow } from '../types';
+import { TriangleAlert } from 'lucide-react';
 
 interface SignUpCardProps {
   setState: (state: SignInFlow) => void;
 }
 
 export const SignUpCard = ({ setState }: SignUpCardProps) => {
+
+
   const { signIn } = useAuthActions();
 
   const [email, setEmail] = useState('');
@@ -30,6 +32,7 @@ export const SignUpCard = ({ setState }: SignUpCardProps) => {
   const [error, setError] = useState('');
   const [pending, setPending] = useState(false);
 
+// const checkEmailExists = useQuery(api.checkEmailExists,{email});
   const onPasswordSignUp = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -49,10 +52,16 @@ export const SignUpCard = ({ setState }: SignUpCardProps) => {
 
   return (
     <Card className="w-full h-full p-8">
-      <CardHeader className="px-0 py-0 mb-2">
+      <CardHeader className="px-0 py-0 mb-5">
         <CardTitle>Sign up to continue</CardTitle>
         <CardDescription>Use your email to continue</CardDescription>
       </CardHeader>
+      {!!error && (
+        <div className="bg-destructive/15 p-3 rounded-md flex items-center gap-x-2 text-sm text-destructive mb-6">
+          <TriangleAlert className="size-4" />
+          <p>{error}</p>
+        </div>
+      )}
       <CardContent className="space-y-5 px-0 pb-0">
         <form onSubmit={onPasswordSignUp} className="space-y-2.5">
           <Input
